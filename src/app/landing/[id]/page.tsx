@@ -21,36 +21,11 @@ function Landingpage({ params }: { params: { id: string } }) {
   const [loading, setLoading] = useState(true);
   const [cLoading, setCLoading] = useState(true);
 
-  // const [formResponses, setFormResponses] = useState<IFormResponse[]>([]);
-  // const [pendingResponses, setPendingResponses] = useState<IFormResponse[]>([]);
-  // const [approvedResponses, setApprovedResponses] = useState<IFormResponse[]>(
-  //   []
-  // );
-  // const filterData = (s: string) =>
-  //   formResponses.filter((response) => response.statusOfClient === s);
-
   useEffect(() => {
     setFormResponses(formResponses);
-    // setApprovedResponses(filterData("Approved"));
-    // setPendingResponses(filterData("Pending"));
-
-    // console.log("Form Responses from Parent", formResponses);
-
-    // console.log("Before loading", loading, cLoading);
-    // params.setLoading(false);
     setCLoading(false);
     // console.log("After loading", loading, cLoading);
   }, [setCLoading]);
-
-  // const [value, setValue] = React.useState("1");
-
-  // const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-  //   setValue(newValue);
-  // };
-
-  // const handleCardButton = () => {
-  //   console.log("Hello ");
-  // };
 
   useEffect(() => {
     if (!localStorage.getItem("_id")) {
