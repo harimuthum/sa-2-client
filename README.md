@@ -2,8 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
-
+1) Clone the project to local directory
+2) Run the command below in terminal of the above directory to install the node modules from 'package.json' file:
+```bash
+npm install
+```
+3) Run the development server:
 ```bash
 npm run dev
 # or
