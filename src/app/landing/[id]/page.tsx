@@ -9,8 +9,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import LandingCard from "@/components/LandingCard";
-
-import LandingDrawer from "@/components/LandingDrawer";
 import Navbar from "@/components/Navbar";
 
 import { IFormResponse } from "../../../interfaces/IFormResponse";
