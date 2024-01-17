@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
+import Axios from "axios";
 
 import { IFormResponse } from "../interfaces/IFormResponse";
 
@@ -21,6 +22,19 @@ const TabComponent = ({}) => {
       return item;
     });
     setFormResponses(updatedData);
+
+    Axios.post("http://localhost:5000/api/form/update-form-response-status", {
+      _id: id,
+      statusOfClient: updatedData[0].statusOfClient,
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // console.log(updatedData);
   };
 
   useEffect(() => {
