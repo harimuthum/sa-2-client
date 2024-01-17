@@ -48,7 +48,7 @@ function page() {
         localStorage.setItem("_myUsername", data.data._username);
 
         setTimeout(() => {
-          router.push("/dashboard/" + data.data._id);
+          router.push("/landing/" + data.data._id);
         }, 1000);
       }
     } catch (err) {

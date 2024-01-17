@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Navbar from "@/components/Navbar";
 
-import { IFormResponse } from "../../../interfaces/IFormResponse";
+import { IFormResponse } from "@/interfaces/IFormResponse";
 import TabComponent from "@/components/TabComponent";
 
 function Landingpage({ params }: { params: { id: string } }) {
