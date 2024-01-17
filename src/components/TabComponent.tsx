@@ -14,7 +14,7 @@ const TabComponent = ({}) => {
 
   const handleStatusToggle = (id: any) => {
     const updatedData = formResponses.map((item) => {
-      if (item.artist_id === id) {
+      if (item._id === id) {
         item.statusOfClient =
           item.statusOfClient === "Pending" ? "Approved" : "Pending";
       }
@@ -39,9 +39,10 @@ const TabComponent = ({}) => {
         );
 
         const newData = await res.json();
-        console.log("From BackEnd: newData", newData);
+        // console.log("From BackEnd: newData", newData);
         const updatedData = newData.data.map((response: IFormResponse) => {
           return {
+            _id: response._id,
             artist_id: response.artist_id,
             clientName: response.clientName,
             clientEmail: response.clientEmail,
@@ -55,7 +56,7 @@ const TabComponent = ({}) => {
             statusOfClient: response.statusOfClient,
           };
         });
-        console.log("Processed Data", updatedData);
+        // console.log("Processed Data", updatedData);
 
         setFormResponses([...formResponses, ...updatedData]);
       } catch (error) {
@@ -94,7 +95,7 @@ const TabComponent = ({}) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredData.map((item, idx) => (
           <div
-            key={idx}
+            key={item._id}
             className="bg-gray-400 p-4 rounded-md shadow-lg border"
           >
             <h3 className="text-xl font-semibold mb-2">{item.clientName}</h3>
@@ -126,7 +127,7 @@ const TabComponent = ({}) => {
                   ? "bg-green-500 text-white hover:bg-green-600"
                   : "bg-blue-500 text-white hover:bg-blue-600"
               } px-4 py-2 rounded`}
-              onClick={() => handleStatusToggle(item.artist_id)}
+              onClick={() => handleStatusToggle(item._id)}
             >
               {item.statusOfClient === "Pending" ? "Approve" : "Revert"}
             </button>
