@@ -8,7 +8,6 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import LandingCard from "@/components/LandingCard";
 import Navbar from "@/components/Navbar";
 
 import { IFormResponse } from "../../../interfaces/IFormResponse";
@@ -23,35 +22,35 @@ function Landingpage({ params }: { params: { id: string } }) {
   const [cLoading, setCLoading] = useState(true);
 
   // const [formResponses, setFormResponses] = useState<IFormResponse[]>([]);
-  const [pendingResponses, setPendingResponses] = useState<IFormResponse[]>([]);
-  const [approvedResponses, setApprovedResponses] = useState<IFormResponse[]>(
-    []
-  );
-  const filterData = (s: string) =>
-    formResponses.filter((response) => response.statusOfClient === s);
+  // const [pendingResponses, setPendingResponses] = useState<IFormResponse[]>([]);
+  // const [approvedResponses, setApprovedResponses] = useState<IFormResponse[]>(
+  //   []
+  // );
+  // const filterData = (s: string) =>
+  //   formResponses.filter((response) => response.statusOfClient === s);
 
   useEffect(() => {
     setFormResponses(formResponses);
-    setApprovedResponses(filterData("Approved"));
-    setPendingResponses(filterData("Pending"));
+    // setApprovedResponses(filterData("Approved"));
+    // setPendingResponses(filterData("Pending"));
 
-    console.log("Form Responses from Parent", formResponses);
+    // console.log("Form Responses from Parent", formResponses);
 
-    console.log("Before loading", loading, cLoading);
+    // console.log("Before loading", loading, cLoading);
     // params.setLoading(false);
     setCLoading(false);
-    console.log("After loading", loading, cLoading);
+    // console.log("After loading", loading, cLoading);
   }, [setCLoading]);
 
-  const [value, setValue] = React.useState("1");
+  // const [value, setValue] = React.useState("1");
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-  };
+  // const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  //   setValue(newValue);
+  // };
 
-  const handleCardButton = () => {
-    console.log("Hello ");
-  };
+  // const handleCardButton = () => {
+  //   console.log("Hello ");
+  // };
 
   useEffect(() => {
     if (!localStorage.getItem("_id")) {
@@ -78,7 +77,7 @@ function Landingpage({ params }: { params: { id: string } }) {
         }
       );
       const res = await req.json();
-      console.log("Data from Backend", res.data);
+      // console.log("Data from Backend", res.data);
       setFormResponses(res.data);
     }
     getFormResponse();
