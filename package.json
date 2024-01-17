@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.12.1",
-    "@mui/lab": "^5.0.0-alpha.160",
-    "@mui/material": "^5.15.4",
     "axios": "^1.6.5",
     "next": "14.0.4",
     "react": "^18",
